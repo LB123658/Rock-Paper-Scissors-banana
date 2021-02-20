@@ -2,8 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Rock paper scissors</title>
+<title>Rock Paper Scissors banana</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='icon' href='https://upload.wikimedia.org/wikipedia/commons/f/f7/Bananas.svg' type='image/svg'/ >
+
 <script>
 function rockFunction() {
 var x =  
@@ -86,7 +88,8 @@ var x =
             
             document.getElementById( 
               "scoreButton").style = x; 
-        }         
+        } 
+
 </script>
 <style>
 h1 {
@@ -189,9 +192,47 @@ cursor: default;
 width: 250px;
 height: 50px;
 }
+#shareDiv {
+visibility: hidden;
+}
+#shareIcon {
+  position: abolute;
+  top: 200px;
+  font-size: 25px;
+  border: none;
+  border-radius: 10px;
+  height: 50px;
+  color: white;
+  font-family: futura;
+}
+#textingCenter {
+position: abolute;
+top: 200px;
+left: 100px;
+}
+#connect {
+position: abolute;
+top: 200px;
+left: 200px;
+}  
+#chatPlus {
+position: abolute;
+top: 200px;
+left: 300px;
+}
+#bnfChat {
+position: abolute;
+top: 200px;
+left: 300px;
+}  
+#shareMessage {
+font-family: futura;
+color: grey;
+font-size: 30px;
+}
 </style>
 </head>
-<body>
+<body id="body" onclick="show()">
 <h1 title="The official game">Rock Paper Scissors <span class="yellow">banana</span><h1>
 <button class="computerPlay" id="deadButton"></button>
 <button class="computerPlay" id="liveButton">Computer is choosing...</button>
@@ -212,7 +253,7 @@ height: 50px;
 <br><br><br><br>
 
 
-<button class="player" id="share" onclick="shareGame()">Share game...</button>
+<button class="player" id="share" onclick="shareGame(); shareOptions()">Share game...</button>
 
 <button class="player" id="share" onclick="resetComputer(); resetScorecolor();">Play again</button>
 <br>
@@ -226,8 +267,11 @@ height: 50px;
 
 <input type="hidden" id="youWin" placeholder="You win..." value="background-color: #0F9D58; color: white;">
 <br><br><br><br><br><br>
-<input type="text" value="https://sites.google.com/view/photon-store/games" id="shareLink" style="border: none; background; transparent; color: white; font-size: 1px;">
+<input type="text" value="https://lb123658.github.io/Rock-Paper-Scissors-banana/" id="shareLink" style="border: none; background; transparent; color: white; font-size: 1px;">
 
 <input type="hidden" placeholder="Computer is choosing again..." id="hiddenReset" name="background: transparent; color: white;">
+  
+
+
 </body>
 </html>
