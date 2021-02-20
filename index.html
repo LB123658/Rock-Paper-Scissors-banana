@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rock paper scissors</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+function rockFunction() {
+var x =  
+                document.getElementById("rockLost").value; 
+            
+            document.getElementById( 
+              "liveButton").innerHTML = x; 
+        } 
+function paperFunction() {
+var x =  
+                document.getElementById("paperLost").value; 
+            
+            document.getElementById( 
+              "liveButton").innerHTML = x; 
+        } 
+function scissorsFunction() {
+var x =  
+                document.getElementById("scissorsLost").value; 
+            
+            document.getElementById( 
+              "liveButton").innerHTML = x; 
+        } 
+function bananaFunction() {
+var x =  
+                document.getElementById("bananaWin").value; 
+            
+            document.getElementById( 
+              "liveButton").innerHTML = x; 
+        } 
+
+function loseFunction() {
+var x =  
+                document.getElementById("youLose").placeholder; 
+            
+            document.getElementById( 
+              "scoreButton").innerHTML = x; 
+        } 
+function winFunction() {
+var x =  
+                document.getElementById("youWin").placeholder; 
+            
+            document.getElementById( 
+              "scoreButton").innerHTML = x; 
+        } 
+function loseGame() {
+var x =  
+                document.getElementById("youLose").value; 
+            
+            document.getElementById( 
+              "scoreButton").style = x; 
+        } 
+function winGame() {
+var x =  
+                document.getElementById("youWin").value; 
+            
+            document.getElementById( 
+              "scoreButton").style = x; 
+        } 
+        
+        
+function shareGame() {
+  var copyText = document.getElementById("shareLink");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert("Share this link with friends: " + copyText.value);
+}  
+
+function resetComputer() {
+var x =  
+                document.getElementById("hiddenReset").placeholder; 
+            
+            document.getElementById( 
+              "liveButton").innerHTML = x; 
+        } 
+        
+function resetScorecolor() {
+var x =  
+                document.getElementById("hiddenReset").name; 
+            
+            document.getElementById( 
+              "scoreButton").style = x; 
+        }         
+</script>
+<style>
+h1 {
+font-family: futura;
+color: #4285f4ff;
+font-size: 50px;
+text-align: center;
+cursor: default;
+}
+p {
+font-family: futura;
+color: #4285f4ff;
+font-size: 20px;
+text-align: left;
+}
+.yellow {
+color: #F4B400;
+}
+.computerPlay {
+width: 33%;
+height: 100px;
+float: left;
+background: transparent;
+border: none;
+font-family: futura;
+font-size: 20px;
+color: grey;
+}
+#liveButton:hover {
+background: lightgrey;
+cursor: progress;
+}
+.player {
+width: 25%;
+height: 100px;
+float: left;
+cursor: pointer;
+border: 2px solid #4285f4ff;
+background: transparent;
+color: #4285f4ff;
+border-radius: 8px;
+cursor: pointer;
+font-family: futura;
+font-size: 30px;
+}
+.player:hover {
+background-color: #4285f4ff;
+animation-name: example;
+  animation-duration: 0.9s;
+  animation-iteration-count: 1;
+  color: white;
+}
+@keyframes example {
+ 
+  0% {background-color: white;}
+  100%   {background-color: #4285f4ff;}
+
+}
+.banana {
+width: 25%;
+height: 100px;
+float: left;
+cursor: pointer;
+border: 2px solid #F4B400;
+background: transparent;
+color: #F4B400;
+border-radius: 8px;
+cursor: pointer;
+font-family: futura;
+font-size: 30px;
+}
+.banana:hover {
+background-color: #F4B400;
+animation-name: banana;
+  animation-duration: 0.9s;
+  animation-iteration-count: 1;
+  color: white;
+}
+@keyframes banana {
+ 
+  0% {background-color: white;}
+  100%   {background-color: #F4B400;}
+
+}
+
+.lose {
+width: 33%;
+height: 100px;
+float: left;
+background: transparent;
+border: none;
+font-family: futura;
+font-size: 40px;
+color: grey;
+}
+#scoreButton:hover {
+cursor: default;
+}
+#share {
+width: 250px;
+height: 50px;
+}
+</style>
+</head>
+<body>
+<h1 title="The official game">Rock Paper Scissors <span class="yellow">banana</span><h1>
+<button class="computerPlay" id="deadButton"></button>
+<button class="computerPlay" id="liveButton">Computer is choosing...</button>
+<button class="computerPlay" id="deadButton"></button>
+<br><br>
+<p>Choose your move...</p>
+
+
+<button class="player" title="Crush those scissors!" onclick="rockFunction(); loseFunction(); loseGame()">Rock</button>
+<button class="player" title="A blank white sheet" onclick="paperFunction(); loseFunction(); loseGame()">Paper</button>
+<button class="player" title="Cut some paper!" onclick="scissorsFunction(); loseFunction(); loseGame()">Scissors</button>
+<button class="banana" title="Banana peel power!" onclick="bananaFunction(); winFunction(); winGame()">Banana</button>
+<br><br>
+
+<button class="lose" id="blankButton" name="Computer is choosing..."></button>
+<button class="lose" id="scoreButton" title="Win or lose?"></button>
+<button class="lose" id="blankButton"></button>
+<br><br><br><br>
+
+
+<button class="player" id="share" onclick="shareGame()">Share game...</button>
+
+<button class="player" id="share" onclick="resetComputer(); resetScorecolor();">Play again</button>
+<br>
+
+<input type="hidden" id="rockLost" value="Computer's choice is: Paper">
+<input type="hidden" id="paperLost" value="Computer's choice is: Scissors">
+<input type="hidden" id="scissorsLost" value="Computer's choice is: Rock">
+<input type="hidden" id="bananaWin" value="Computer's choice is: Paper">
+
+<input type="hidden" id="youLose" placeholder="You lose..." value="background-color: #DB4437; color: white;">
+
+<input type="hidden" id="youWin" placeholder="You win..." value="background-color: #0F9D58; color: white;">
+<br><br><br><br><br><br>
+<input type="text" value="https://sites.google.com/view/photon-store/games" id="shareLink" style="border: none; background; transparent; color: white; font-size: 1px;">
+
+<input type="hidden" placeholder="Computer is choosing again..." id="hiddenReset" name="background: transparent; color: white;">
+</body>
+</html>
