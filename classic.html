@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rock, Paper, Scissors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<style>
+body {
+text-align: center;
+background: #383838;
+}
+* {
+font-family: 'Fira Code', monospace;
+user-select: none;
+-webkit-user-select: none;
+cursor: default;
+}
+button {
+height: 50px;
+font-size: 20px;
+background: #5765F2;
+border: none;
+color: white;
+padding: 10px 30px 10px 30px;
+border-radius: 15px;
+transition: border-radius 0.5s;
+}
+button:hover {
+border-radius: 6px;
+}
+p,h2 {
+color: lightgrey;
+}
+#demo {
+background: grey;
+padding: 10px;
+}
+.icon {
+width: 50px;
+height: 50px;
+padding: 5px;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Rock, Paper, Scissors</h2>
+<h2 id="win_lose"></h2>
+<p>Your choice:</p>
+
+<button onclick="rock()">Rock</button>
+<button onclick="paper()">Paper</button>
+<button onclick="scissors()">Scissors</button>
+
+<br><br>
+
+<p>Computer's choice:</p>
+
+<p id="demo">Undecided</p>
+
+<button class="icon" onclick="window.print();" title="Print game"><span class="material-icons">print</span></button>
+<button class="icon" onclick="share()" title="Share game"><span class="material-icons">share</span></button>
+<script>
+function rock() {
+var obj = "rock"; 
+var choice = Math.floor(Math.random() * 3) + 1;
+  if (choice == "1") {
+    document.getElementById("demo").innerHTML = "Rock";
+    notify("Tie");
+  } else if (choice == "2") {
+    document.getElementById("demo").innerHTML = "Paper";
+    notify("You lose");
+  } else if (choice == "3") {
+    document.getElementById("demo").innerHTML = "Scissors";
+    notify("You win");
+  }
+}
+function paper() {
+var obj = "paper";  
+var choice = Math.floor(Math.random() * 3) + 1;
+  if (choice == "1") {
+    document.getElementById("demo").innerHTML = "Rock";
+    notify("You win");
+  } else if (choice == "2") {
+    document.getElementById("demo").innerHTML = "Paper";
+    notify("Tie");
+  } else if (choice == "3") {
+    document.getElementById("demo").innerHTML = "Scissors";
+    notify("You lose");
+  }
+}
+function scissors() {
+var obj = "scissors";  
+var choice = Math.floor(Math.random() * 3) + 1;
+  if (choice == "1") {
+    document.getElementById("demo").innerHTML = "Rock";
+    notify("You lose");
+  } else if (choice == "2") {
+    document.getElementById("demo").innerHTML = "Paper";
+    notify("You win");
+  } else if (choice == "3") {
+    document.getElementById("demo").innerHTML = "Scissors";
+    notify("Tie");
+  }
+}
+function notify(text) {
+  document.getElementById("win_lose").innerHTML = text;
+  if (text == "You win") {
+    document.getElementById("win_lose").style.color = "green";
+  } else if (text == "You lose") {
+    document.getElementById("win_lose").style.color = "red";
+  } else {
+    document.getElementById("win_lose").style.color = "white";
+  }
+}
+</script>
+
+</body>
+</html>
